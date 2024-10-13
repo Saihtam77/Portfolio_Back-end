@@ -1,0 +1,49 @@
+<div class="relative overflow-x-auto">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    ID
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Pic
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    skillLevel
+                </th>
+            </tr>
+        </thead>
+        @if (techs){
+        <tbody>
+            @for (tech of techs; track tech.id){
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{tech.id}}
+                </th>
+                <td class="px-6 py-4">
+                    {{tech.name}}
+                </td>
+                <td class="px-6 py-4">  
+                    <img src="data:" alt="{{tech.name}}" class="w-32">
+                </td>
+                <td class="px-6 py-4">
+                    {{tech.skillLevel}}
+                </td>
+                <td class="px-6 py-4">
+                    <a routerLink="/Dashboard/EditTech/{{tech.id}}"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-md">Edit</a>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded-md"
+                        (click)="deleteTech(tech.id, tech.pic)">Delete</button>
+                </td>
+            </tr>
+
+            }
+
+        </tbody>
+        }
+
+    </table>
+</div>

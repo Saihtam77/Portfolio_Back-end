@@ -1,0 +1,44 @@
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="space-y-4">
+  
+
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+      <input id="name" formControlName="name" type="text" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+    </div>
+  
+    <div>
+      <label for="startDate" class="block text-sm font-medium text-gray-700">Start Date</label>
+      <input id="startDate" formControlName="startDate" type="date" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+    </div>
+  
+    <div>
+      <label for="desc" class="block text-sm font-medium text-gray-700">Description</label>
+      <textarea id="desc" formControlName="desc" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+    </div>
+  
+    <div>
+      <label for="intro" class="block text-sm font-medium text-gray-700">Introduction</label>
+      <textarea id="intro" formControlName="intro" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"></textarea>
+    </div>
+  
+    <div>
+      <label for="link" class="block text-sm font-medium text-gray-700">Link</label>
+      <input id="link" formControlName="link" type="url" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+    </div>
+  
+    <div>
+      <label for="pic1" class="block text-sm font-medium text-gray-700">Picture 1</label>
+      <input id="pic1" formControlName="pic1" type="text" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+    </div>
+  
+    <div>
+      <label for="pic2" class="block text-sm font-medium text-gray-700">Picture 2</label>
+      <input id="pic2" formControlName="pic2" type="text" class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+    </div>
+  
+    <div>
+      <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+        Submit
+      </button>
+    </div>
+  </form>

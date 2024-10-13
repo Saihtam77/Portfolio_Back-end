@@ -1,0 +1,15 @@
+/* navbar.component.css */
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #333; /* Adjust the background color as needed */
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+  
+  .navbar-container.hidden {
+    transform: translateX(-100%);
+  }

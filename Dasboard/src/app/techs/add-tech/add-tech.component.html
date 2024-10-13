@@ -1,0 +1,48 @@
+<form [formGroup]="techForm" (ngSubmit)="onSubmit()" class="space-y-4" enctype="multipart/form-data">
+    <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input id="name" formControlName="name" type="text"
+            class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <!-- Error dispplay -->
+        <!-- // If the field is invalid and touched, display the error message -->
+        <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            *ngIf="techForm.get('name')?.invalid  && techForm.get('skillLevel')?.touched">
+            <small *ngIf="techForm.get('name')?.errors?.['required']">Name is required.</small>
+        </div>
+    </div>
+
+    <div>
+        <label for="pic" class="block text-sm font-medium text-gray-700">Picture</label>
+        <input id="pic" type="file" (change)="onFileChange($event)" accept="image/*"
+            class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <!-- Error display -->
+        <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            *ngIf="techForm.get('pic')?.invalid && techForm.get('pic')?.touched">
+            <small *ngIf="techForm.get('pic')?.errors?.['required']">Picture is required.</small>
+            <small *ngIf="techForm.get('pic')?.errors?.['invalidFileType']">Invalid file type. Please upload a JPEG or
+                PNG
+                image.</small>
+            <small *ngIf="techForm.get('pic')?.errors?.['fileSizeExceeded']">File size exceeds the 5 MB limit.</small>
+        </div>
+
+    </div>
+
+    <div>
+        <label for="skillLevel" class="block text-sm font-medium text-gray-700">Skill Level</label>
+        <input id="skillLevel" formControlName="skillLevel" type="number"
+            class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        <!-- Error dispaly -->
+        <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+            *ngIf="techForm.get('skillLevel')?.invalid && techForm.get('skillLevel')?.touched">
+            <small *ngIf="techForm.get('skillLevel')?.errors?.['required']">Skill Level is required.</small>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit"
+            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+            Submit
+        </button>
+
+    </div>
+</form>

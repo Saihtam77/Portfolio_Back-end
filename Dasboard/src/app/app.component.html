@@ -1,0 +1,9 @@
+<app-menu-toogle-btn (toggle)="toggleNavbar()"></app-menu-toogle-btn>
+<app-menu-toogle-btn (toggle)="toggleNavbar()"></app-menu-toogle-btn>
+
+<main class="w-full flex">
+  <app-navbar [hidden]="isNavbarHidden"></app-navbar>
+  <div class="w-3/4 bg-white p-5 mt-5">
+    <router-outlet />
+  </div>
+</main>
